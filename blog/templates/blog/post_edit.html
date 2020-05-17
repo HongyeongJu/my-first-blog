@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h1>New post</h1>
+  <form method="POST" class="post-form">{% csrf_token %}
+    <!-- csrf_token 을 쓰면 form 보안이 되고 안쓰면 오류뜸 -->
+    {{ form.as_p}}
+    <button type="submit" class="save btn btn-default">Save</button>
+  </form>
+{% endblock %}
